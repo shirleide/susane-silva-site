@@ -1,6 +1,7 @@
 "use client";
 
 import type { FormEvent } from "react";
+import { useState } from "react";
 import {
   InstagramIcon,
   SpotifyIcon,
@@ -38,41 +39,77 @@ const serviceOptions = [
   "Gestão de Produtos Digitais",
   "Gestão e liderança",
   "Mentoria de carreira",
+  "Outro assunto",
   "Palestras e eventos",
   "Treinamento",
   "Workshop",
-  "Outro assunto"
 ];
 
-function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
-  event.preventDefault();
-
-  const formData = new FormData(event.currentTarget);
-  const name = String(formData.get("name") ?? "");
-  const email = String(formData.get("email") ?? "");
-  const phone = String(formData.get("phone") ?? "");
-  const service = String(formData.get("service") ?? "");
-  const message = String(formData.get("message") ?? "");
-
-  const subject = `Solicitação pelo site - ${name}`;
-  const body = [
-    "Nova solicitação pelo site:",
-    "",
-    `Nome completo: ${name}`,
-    `E-mail: ${email}`,
-    `Telefone: ${phone}`,
-    `Serviço: ${service}`,
-    "",
-    "Contexto:",
-    message,
-  ].join("\n");
-
-  window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(
-    subject,
-  )}&body=${encodeURIComponent(body)}`;
-}
+type SubmitStatus = "idle" | "success" | "error" | "missing-key";
 
 export function ContactFormSection() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>("idle");
+
+  async function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
+    if (!accessKey) {
+      setSubmitStatus("missing-key");
+      return;
+    }
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const name = String(formData.get("name") ?? "");
+    const email = String(formData.get("email") ?? "");
+    const phone = String(formData.get("phone") ?? "");
+    const service = String(formData.get("service") ?? "");
+    const message = String(formData.get("message") ?? "");
+
+    const payload = {
+      access_key: accessKey,
+      subject: `Solicitação pelo site - ${name}`,
+      from_name: "Site Susane Silva",
+      name,
+      email,
+      phone,
+      service,
+      message,
+      to: siteConfig.email,
+    };
+
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = (await response.json()) as { success?: boolean };
+
+      if (!response.ok || !result.success) {
+        setSubmitStatus("error");
+        return;
+      }
+
+      form.reset();
+      setSubmitStatus("success");
+    } catch {
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
   return (
     <section id="contato" className="bg-[#87452E] px-5 py-20 text-white md:px-8 lg:px-0">
       <div className="mx-auto max-w-[470px]">
@@ -175,10 +212,29 @@ export function ContactFormSection() {
 
           <button
             type="submit"
-            className="mt-5 h-12 w-full rounded-[4px] bg-[#CF9D83] px-5 text-[12px] font-bold text-[#2B211E] transition hover:bg-[#C18A6F]"
+            disabled={isSubmitting}
+            className="mt-5 h-12 w-full rounded-[4px] bg-[#CF9D83] px-5 text-[12px] font-bold text-[#2B211E] transition hover:bg-[#C18A6F] disabled:cursor-not-allowed disabled:opacity-70"
           >
-            Enviar solicitação
+            {isSubmitting ? "Enviando..." : "Enviar solicitação"}
           </button>
+
+          {submitStatus === "success" && (
+            <p className="mt-4 rounded-[3px] bg-[#E9F5EA] px-4 py-3 text-center text-[11px] font-semibold leading-5 text-[#315E35]">
+              Solicitação enviada com sucesso. Em breve entraremos em contato.
+            </p>
+          )}
+
+          {submitStatus === "error" && (
+            <p className="mt-4 rounded-[3px] bg-[#F8E7E1] px-4 py-3 text-center text-[11px] font-semibold leading-5 text-[#87452E]">
+              Não foi possível enviar agora. Tente novamente em alguns instantes.
+            </p>
+          )}
+
+          {submitStatus === "missing-key" && (
+            <p className="mt-4 rounded-[3px] bg-[#F8E7E1] px-4 py-3 text-center text-[11px] font-semibold leading-5 text-[#87452E]">
+              Configure a chave do Web3Forms para ativar o envio direto.
+            </p>
+          )}
 
           <p className="mt-8 text-center text-[10px] leading-4 text-[#8A817B]">
             Seus dados estão protegidos e não serão compartilhados
