@@ -47,7 +47,7 @@ export function FaqSection() {
             <details
               key={item.question}
               open={index === 0}
-              className="group rounded-[4px] bg-white px-6 py-5 shadow-[0_1px_2px_rgba(43,33,30,0.1)] open:shadow-[0_3px_8px_rgba(43,33,30,0.18)]"
+              className="relief-card group rounded-[4px] bg-white px-6 py-5 shadow-[0_1px_2px_rgba(43,33,30,0.1)] open:shadow-[0_3px_8px_rgba(43,33,30,0.18)]"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-[13px] font-bold leading-5 text-[#2B211E]">
                 {item.question}

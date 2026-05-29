@@ -59,7 +59,7 @@ export function MethodologySection() {
             return (
               <article
                 key={step.title}
-                className="rounded-[3px] bg-[#F2EEE9] px-8 py-7"
+                className="relief-card rounded-[3px] bg-[#F2EEE9] px-8 py-7"
               >
                 <div className="flex gap-5">
                   <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-white ${step.color}`}>

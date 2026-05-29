@@ -104,7 +104,7 @@ export function WhyWorkWithUsSection() {
             return (
               <article
                 key={reason.title}
-                className="min-h-[320px] rounded-[4px] bg-white p-8 shadow-[0_1px_5px_rgba(58,33,24,0.10)]"
+                className="relief-card min-h-[320px] rounded-[4px] bg-white p-8 shadow-[0_1px_5px_rgba(58,33,24,0.10)]"
               >
                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#D8D1C9] text-[#87452E]">
                   <Icon size={18} strokeWidth={1.8} />

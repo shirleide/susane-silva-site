@@ -128,7 +128,7 @@ export function ContactFormSection() {
 
         <form
           onSubmit={handleContactSubmit}
-          className="mt-5 rounded-[4px] bg-white px-9 py-9 text-[#2B211E] shadow-[0_18px_45px_rgba(0,0,0,0.18)]"
+          className="relief-card mt-5 rounded-[4px] bg-white px-9 py-9 text-[#2B211E] shadow-[0_18px_45px_rgba(0,0,0,0.18)]"
         >
           <p className="text-[10px] leading-5 text-[#6B625D]">
             Preencha os campos e eu retorno em até 24 horas
