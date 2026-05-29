@@ -45,6 +45,8 @@ const serviceOptions = [
   "Workshop",
 ];
 
+const web3FormsAccessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? "";
+
 type SubmitStatus = "idle" | "success" | "error" | "missing-key";
 
 export function ContactFormSection() {
@@ -54,7 +56,7 @@ export function ContactFormSection() {
   async function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    const accessKey = web3FormsAccessKey;
 
     if (!accessKey) {
       setSubmitStatus("missing-key");
@@ -127,9 +129,16 @@ export function ContactFormSection() {
         </div>
 
         <form
+          action="https://api.web3forms.com/submit"
           onSubmit={handleContactSubmit}
+          method="post"
           className="relief-card mt-5 rounded-[4px] bg-white px-9 py-9 text-[#2B211E] shadow-[0_18px_45px_rgba(0,0,0,0.18)]"
         >
+          <input type="hidden" name="access_key" value={web3FormsAccessKey} />
+          <input type="hidden" name="subject" value="Solicitação pelo site - Susane Silva" />
+          <input type="hidden" name="from_name" value="Site Susane Silva" />
+          <input className="hidden" type="checkbox" name="botcheck" tabIndex={-1} />
+
           <p className="text-[10px] leading-5 text-[#6B625D]">
             Preencha os campos e eu retorno em até 24 horas
           </p>
