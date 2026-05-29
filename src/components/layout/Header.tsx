@@ -28,6 +28,10 @@ const navLinks = [
     href: "#depoimentos",
   },
   {
+    label: "Imprensa",
+    href: "#imprensa",
+  },
+  {
     label: "FAQ",
     href: "#faq",
   },

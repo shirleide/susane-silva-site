@@ -15,12 +15,13 @@ const footerLinks = [
   { label: "Serviços", href: "#servicos" },
   { label: "Metodologia", href: "#metodo" },
   { label: "Depoimentos", href: "#depoimentos" },
+  { label: "Imprensa", href: "#imprensa" },
 ];
 
 const socialLinks = [
   {
     label: "LinkedIn",
-    href: "#contato",
+    href: siteConfig.linkedin,
     Icon: LinkedInIcon,
     className: "text-[#0A66C2]",
   },
@@ -32,7 +33,7 @@ const socialLinks = [
   },
   {
     label: "TikTok",
-    href: "#contato",
+    href: siteConfig.tiktok,
     Icon: TikTokIcon,
     className: "text-[#111111]",
   },
@@ -125,7 +126,7 @@ export function Footer() {
                 className="inline-flex items-center gap-2 transition hover:text-[#87452E]"
               >
                 <WhatsAppIcon className="h-4 w-4 text-[#25D366]" />
-                81 999 551 785
+                81 9 9955-1785
               </a>
               <span>Pernambuco, Brasil</span>
             </div>

@@ -6,10 +6,17 @@ export const siteConfig = {
   url: "https://susanesilva.com.br",
   whatsapp: "https://wa.me/5581999551785",
   email: "ssassessoria.agencia@gmail.com",
-  instagram: "https://www.instagram.com/susanesilva.a?igsh=MTc1dDYzY3pnc2d6NQ==",
+  jornadaProtagonistaMpa: "https://chk.eduzz.com/7WXQRYQY9A",
+  instagram: "https://www.instagram.com/susanesilva.a",
+  linkedin: "https://www.linkedin.com/in/susanesilva/",
+  tiktok: "https://www.tiktok.com/@susanesilva.a",
   spotify:
     "https://open.spotify.com/show/2VCwFvNZmGUEYzi2jJAeyu?si=egTY-466T52eJzGcPAXnYw",
   youtube: "https://youtu.be/nBgUM_8WBpo",
+  entrevistaCulturaInforma: "https://www.instagram.com/reels/DWEnL2iDuNg/",
+  entrevistaAoVivo: "https://www.youtube.com/live/ritVhB3WtlA",
+  materiaPublicada:
+    "https://inordestenoticias.com/2026/04/28/1o-de-maio-saude-mental-ganha-protagonismo-no-debate-sobre-o-futuro-do-trabalho-no-brasil/",
 };
 
 export const heroStats = [

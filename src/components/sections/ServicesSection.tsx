@@ -7,6 +7,7 @@ import {
   Star,
   UserRound,
 } from "lucide-react";
+import { siteConfig } from "@/data/site";
 
 const mpaFeatures = [
   "Acompanhamento individualizado anual.",
@@ -67,7 +68,7 @@ export function ServicesSection() {
           </p>
         </div>
 
-        <article className="relative mt-16 rounded-[3px] border-2 border-[#87452E] bg-white px-6 py-6 text-[#302D2A] shadow-[0_8px_22px_rgba(0,0,0,0.12)] md:px-8">
+        <article className="relief-card relative mt-16 rounded-[3px] border-2 border-[#87452E] bg-white px-6 py-6 text-[#302D2A] shadow-[0_8px_22px_rgba(0,0,0,0.12)] md:px-8">
           <span className="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#87452E] px-4 py-2 text-[10px] font-bold uppercase tracking-[0.08em] text-white">
             Mais procurado
           </span>
@@ -103,7 +104,9 @@ export function ServicesSection() {
               </div>
 
               <a
-                href="#contato"
+                href={siteConfig.jornadaProtagonistaMpa}
+                target="_blank"
+                rel="noreferrer"
                 className="mt-6 inline-flex items-center gap-2 rounded-[3px] bg-[#87452E] px-5 py-3 text-[12px] font-bold text-white transition hover:bg-[#6F3724]"
               >
                 <MessageCircle size={14} />
@@ -120,14 +123,14 @@ export function ServicesSection() {
             return (
               <article
                 key={service.title}
-                className="rounded-[3px] border-2 border-[#87452E] bg-white p-7 text-[#302D2A] shadow-[0_8px_22px_rgba(0,0,0,0.10)]"
+                className="relief-card flex min-h-[336px] rounded-[3px] border-2 border-[#87452E] bg-white p-7 text-[#302D2A] shadow-[0_8px_22px_rgba(0,0,0,0.10)]"
               >
-                <div className="flex items-start gap-4">
+                <div className="flex w-full items-start gap-4">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#596747] text-white">
                     <Icon size={18} />
                   </div>
 
-                  <div>
+                  <div className="flex min-h-full flex-1 flex-col">
                     <h3
                       className="text-[20px] font-black leading-tight"
                       style={{ fontFamily: "var(--font-playfair)" }}
@@ -135,13 +138,13 @@ export function ServicesSection() {
                       {service.title}
                     </h3>
 
-                    <p className="mt-4 min-h-[104px] text-[12px] leading-5">
+                    <p className="mt-4 text-[12px] leading-5">
                       {service.description}
                     </p>
 
                     <a
                       href="#contato"
-                      className="mt-6 inline-flex items-center gap-2 rounded-[3px] bg-[#87452E] px-5 py-3 text-[12px] font-bold text-white transition hover:bg-[#6F3724]"
+                      className="mt-auto inline-flex w-fit items-center gap-2 rounded-[3px] bg-[#87452E] px-5 py-3 text-[12px] font-bold text-white transition hover:bg-[#6F3724]"
                     >
                       <MessageCircle size={14} />
                       {service.button}

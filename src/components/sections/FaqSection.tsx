@@ -1,20 +1,28 @@
 const faqs = [
   {
-    question: "Como funciona a mentoria de reposicionamento profissional?",
+    question: "Como funciona a mentoria da MPA Digital e para quem é indicada?",
     answer:
-      "A mentoria é um programa de 3 meses com 12 sessões individuais de 60 minutos. Começamos com um diagnóstico profundo do seu perfil, seguido de análise de mercado, construção de estratégia de posicionamento e acompanhamento durante processos seletivos. Todo o trabalho é personalizado e baseado em suas competências, valores e objetivos.",
+      "A mentoria oferece acompanhamento estratégico e personalizado para profissionais que desejam acelerar resultados, fortalecer posicionamento, desenvolver liderança, fazer transição de carreira ou conquistar novas oportunidades com mais clareza, direção e impacto profissional.",
   },
   {
-    question: "Qual a diferença entre mentoria e coaching de carreira?",
+    question: "Quais serviços a MPA Digital oferece?",
+    answer:
+      "A MPA Digital atua com mentoria de carreira, aceleração profissional, mentoria para especialistas em produtos digitais, soluções em tecnologia, posicionamento estratégico no LinkedIn, desenvolvimento humano, empoderamento, autoconfiança e apoio para profissionais que desejam migrar para áreas de projetos, produtos e tecnologia.",
   },
   {
-    question: "Para quem a mentoria é indicada?",
+    question: "Como funcionam os treinamentos e workshops?",
+    answer:
+      "Os treinamentos e workshops são experiências práticas e colaborativas para empresas, equipes, universidades e comunidades. As facilitações podem acontecer de forma online ou presencial em Pernambuco e região, conectando temas como agilidade, produto, software, liderança, comunicação e inovação.",
   },
   {
-    question: "As sessões são online ou presenciais?",
+    question: "Como funcionam as palestras?",
+    answer:
+      "As palestras promovem reflexões e estratégias sobre carreira, liderança feminina, tecnologia, inovação e impacto social, podendo acontecer de forma remota ou presencial para eventos, empresas e instituições.",
   },
   {
-    question: "Como funciona a primeira sessão?",
+    question: "Como funciona a consultoria para organizações?",
+    answer:
+      "A consultoria apoia organizações na construção de soluções mais inovadoras, humanas e estratégicas, fortalecendo processos, cultura ágil, tecnologia, diversidade, inclusão e preparação para o futuro do trabalho.",
   },
 ];
 

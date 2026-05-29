@@ -9,11 +9,13 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { SocialChannelsSection } from "@/components/sections/SocialChannelsSection";
 import { FaqSection } from "@/components/sections/FaqSection";
 import { ContactFormSection } from "@/components/sections/ContactFormSection";
+import { ScrollAnimations } from "@/components/ui/ScrollAnimations";
 
 export default function Home() {
   return (
     <>
       <Header />
+      <ScrollAnimations />
 
       <main className="pt-[64px]">
         <HeroSection />

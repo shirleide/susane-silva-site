@@ -32,6 +32,18 @@ const socialLinks = [
   },
 ];
 
+const serviceOptions = [
+  "Estratégia ágil",
+  "Facilitação",
+  "Gestão de Produtos Digitais",
+  "Gestão e liderança",
+  "Mentoria de carreira",
+  "Palestras e eventos",
+  "Treinamento",
+  "Workshop",
+  "Outro assunto"
+];
+
 function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
   event.preventDefault();
 
@@ -141,10 +153,9 @@ export function ContactFormSection() {
               <option value="" disabled>
                 Selecione o serviço desejado
               </option>
-              <option>Mentoria de carreira</option>
-              <option>Assessoria profissional</option>
-              <option>Treinamento ou palestra</option>
-              <option>Consultoria organizacional</option>
+              {serviceOptions.map((service) => (
+                <option key={service}>{service}</option>
+              ))}
             </select>
             <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[15px] text-[#C8C0BA]">
               +

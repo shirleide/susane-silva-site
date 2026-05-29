@@ -41,3 +41,63 @@ button,
 a {
   cursor: pointer;
 }
+
+.relief-card,
+.relief-row {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.relief-card:hover,
+.relief-row:hover {
+  transform: translateY(-2px);
+}
+
+.relief-card:hover {
+  box-shadow: 0 14px 28px rgba(58, 33, 24, 0.14);
+}
+
+.relief-row:hover {
+  box-shadow: inset 3px 0 0 #87452e;
+  background-color: #fbf8f5;
+}
+
+[data-reveal="pending"] {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+[data-reveal="visible"] {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 520ms ease,
+    transform 520ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+main img[data-reveal="pending"] {
+  transform: translateY(14px) scale(0.985);
+}
+
+main img[data-reveal="visible"] {
+  transform: translateY(0) scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+  }
+}
