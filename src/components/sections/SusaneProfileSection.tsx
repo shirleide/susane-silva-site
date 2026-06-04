@@ -70,7 +70,7 @@ export function SusaneProfileSection() {
             <div className="mt-6 max-w-[550px] space-y-6 text-[16px] leading-[1.55] text-[#302D2A]">
               <p>
                 Sou uma pernambucana, socióloga e líder em gestão de projetos
-                ágeis, consultoria em organizações nacionais e internacionais.
+                ágeis, consultora em organizações nacionais e internacionais.
               </p>
 
               <p>
