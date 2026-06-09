@@ -51,6 +51,13 @@ const pressItems = [
     source: "Rádio Transamérica Recife 92.7",
     featured: false,
   },
+  {
+    title:
+      "Workshop: como transformar reuniões em decisões e resultados",
+    source: "LeiaJá Carreiras",
+    href: siteConfig.materiaWorkshopReunioes,
+    featured: false,
+  },
 ];
 
 export function SocialChannelsSection() {

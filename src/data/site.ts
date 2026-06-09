@@ -17,6 +17,8 @@ export const siteConfig = {
   entrevistaAoVivo: "https://www.youtube.com/live/ritVhB3WtlA",
   materiaPublicada:
     "https://inordestenoticias.com/2026/04/28/1o-de-maio-saude-mental-ganha-protagonismo-no-debate-sobre-o-futuro-do-trabalho-no-brasil/",
+  materiaWorkshopReunioes:
+    "https://www.leiaja.com/carreiras/2026/04/06/workshop-como-transformar-reunioes-em-decisoes-e-resultados/",
 };
 
 export const heroStats = [
