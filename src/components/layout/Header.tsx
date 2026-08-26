@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { siteConfig } from "@/data/site";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import { WhatsAppIcon } from "@/components/ui/Icons";
 
 const navLinks = [
@@ -56,14 +56,7 @@ export function Header() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-[#F1E7E1] bg-white text-[#241916]">
       <div className="mx-auto flex h-[64px] max-w-[1180px] items-center justify-between px-5 md:px-8 lg:px-0">
         <a href="#inicio" onClick={closeMenu} className="group">
-          <Image
-            src="/assets/logo-ss.svg"
-            alt="Susane Silva assessoria"
-            width={1367}
-            height={1803}
-            priority
-            className="h-12 w-auto"
-          />
+          <BrandLogo className="h-12 w-auto text-[#AE4337]" />
         </a>
 
         <nav className="hidden items-center gap-7 lg:flex">

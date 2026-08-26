@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   InstagramIcon,
   LinkedInIcon,
@@ -8,6 +7,7 @@ import {
   WhatsAppIcon,
   YouTubeIcon,
 } from "@/components/ui/Icons";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import { siteConfig } from "@/data/site";
 
 const footerLinks = [
@@ -57,13 +57,7 @@ export function Footer() {
       <div className="mx-auto max-w-[1180px]">
         <div className="grid grid-cols-1 gap-10 border-b border-[#DDD4CC] pb-7 md:grid-cols-[1fr_180px_210px] md:gap-16">
           <div>
-            <Image
-              src="/assets/logo-ss.svg"
-              alt="Susane Silva assessoria"
-              width={1367}
-              height={1803}
-              className="h-24 w-auto"
-            />
+            <BrandLogo className="h-24 w-auto text-[#AE4337]" />
             <p className="mt-4 text-[13px] leading-5 text-[#2F2A27]">
               Consultoria &amp; Mentoria com estratégia, resultados e arrocho.
             </p>
