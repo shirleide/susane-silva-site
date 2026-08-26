@@ -19,20 +19,20 @@ const mentorLogos = [
   {
     src: "/assets/mulheres-brasil.png",
     alt: "Grupo Mulheres do Brasil",
-    width: 93,
-    height: 64,
+    width: 112,
+    height: 77,
   },
   {
     src: "/assets/mulheres-agilistas.png",
     alt: "Mulheres Agilistas",
-    width: 162,
-    height: 64,
+    width: 194,
+    height: 77,
   },
   {
     src: "/assets/tech-woman.png",
     alt: "Tech Woman",
-    width: 171,
-    height: 64,
+    width: 205,
+    height: 77,
   },
 ];
 
@@ -111,11 +111,11 @@ export function SusaneProfileSection() {
         </div>
 
         <div className="mt-12 border-t border-[#D8D1C9] pt-10">
-          <p className="text-center text-[12px] text-[#302D2A]">
+          <p className="text-center text-[14px] font-medium text-[#302D2A]">
             Mentora
           </p>
 
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-7 gap-y-4">
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-x-9 gap-y-5">
             {mentorLogos.map((logo) => (
               <Image
                 key={logo.src}
@@ -123,7 +123,7 @@ export function SusaneProfileSection() {
                 alt={logo.alt}
                 width={logo.width}
                 height={logo.height}
-                className="h-auto max-h-16 w-auto"
+                className="h-auto max-h-20 w-auto max-w-[44%] object-contain sm:max-w-none"
               />
             ))}
           </div>

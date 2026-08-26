@@ -26,56 +26,56 @@ const logos = [
   {
     src: "/assets/diagonal.png",
     alt: "Diagonal",
-    width: 126,
-    height: 28,
+    width: 158,
+    height: 35,
   },
   {
     src: "/assets/eng-logo.png",
     alt: "Eng",
-    width: 91,
-    height: 28,
+    width: 114,
+    height: 35,
   },
   {
     src: "/assets/ferreira-costa.png",
     alt: "Ferreira Costa",
-    width: 84,
-    height: 33,
+    width: 105,
+    height: 41,
   },
   {
     src: "/assets/google.png",
     alt: "Google",
-    width: 32,
-    height: 32,
+    width: 40,
+    height: 40,
   },
   {
     src: "/assets/ifpe.png",
     alt: "Instituto Federal de Pernambuco",
-    width: 156,
-    height: 32,
+    width: 195,
+    height: 40,
   },
   {
     src: "/assets/institutover.png",
     alt: "Instituto Ver",
-    width: 108,
-    height: 32,
+    width: 135,
+    height: 40,
   },
   {
     src: "/assets/ser-educacional.png",
     alt: "Ser Educacional",
-    width: 82,
-    height: 32,
+    width: 103,
+    height: 40,
   },
   {
     src: "/assets/pasquali-solution.png",
     alt: "Pasquali Solution",
-    width: 109,
-    height: 32,
+    width: 136,
+    height: 40,
   },
   {
     src: "/assets/true-change.png",
     alt: "True Change",
-    width: 100,
-    height: 19,
+    width: 125,
+    height: 24,
   },
 ];
 
@@ -126,11 +126,11 @@ export function WhyWorkWithUsSection() {
         </div>
 
         <div className="mt-7 border-t border-[#D8D1C9] pt-9">
-          <p className="text-center text-[11px] text-[#3F3936]">
+          <p className="text-center text-[14px] font-medium text-[#3F3936]">
             Já orientei profissionais de
           </p>
 
-          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-5 gap-y-5">
+          <div className="mt-7 flex flex-wrap items-center justify-center gap-x-7 gap-y-6">
             {logos.map((logo) => (
               <Image
                 key={logo.src}
@@ -138,7 +138,7 @@ export function WhyWorkWithUsSection() {
                 alt={logo.alt}
                 width={logo.width}
                 height={logo.height}
-                className="h-auto max-h-10 w-auto"
+                className="h-auto max-h-12 w-auto max-w-[42%] object-contain sm:max-w-none"
               />
             ))}
           </div>

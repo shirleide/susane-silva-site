@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import Script from "next/script";
+import { siteConfig } from "@/data/site";
 import "./globals.css";
 
 const inter = Inter({
@@ -14,9 +15,25 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Susane Silva | Consultoria de Carreira",
-  description:
-    "Direção estratégica para pessoas, equipes e organizações que acreditam no desenvolvimento humano.",
+  metadataBase: new URL(siteConfig.url),
+  title: siteConfig.title,
+  description: siteConfig.description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    locale: "pt_BR",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
+  twitter: {
+    card: "summary",
+    title: siteConfig.title,
+    description: siteConfig.description,
+  },
   icons: {
     icon: "/assets/favicon.png",
     apple: "/assets/favicon.png",

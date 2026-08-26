@@ -58,11 +58,11 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 border-b border-[#DDD4CC] pb-7 md:grid-cols-[1fr_180px_210px] md:gap-16">
           <div>
             <Image
-              src="/assets/susane-silva-logo.png"
+              src="/assets/logo-ss.svg"
               alt="Susane Silva assessoria"
-              width={243}
-              height={48}
-              className="h-auto w-[243px]"
+              width={1367}
+              height={1803}
+              className="h-24 w-auto"
             />
             <p className="mt-4 text-[13px] leading-5 text-[#2F2A27]">
               Consultoria &amp; Mentoria com estratégia, resultados e arrocho.

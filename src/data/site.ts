@@ -1,8 +1,8 @@
 export const siteConfig = {
   name: "Susane Silva",
-  title: "Susane Silva | Consultoria de Carreira",
+  title: "Susane Silva | Consultoria para Empresas",
   description:
-    "Direção estratégica para pessoas, equipes e organizações que acreditam no desenvolvimento humano.",
+    "Consultoria, treinamentos e palestras para empresas que querem fortalecer lideranças, desenvolver equipes e acelerar resultados.",
   url: "https://susanesilva.com.br",
   whatsapp: "https://wa.me/5581999551785",
   email: "ssassessoria.agencia@gmail.com",

@@ -57,12 +57,12 @@ export function Header() {
       <div className="mx-auto flex h-[64px] max-w-[1180px] items-center justify-between px-5 md:px-8 lg:px-0">
         <a href="#inicio" onClick={closeMenu} className="group">
           <Image
-            src="/assets/susane-silva-logo.png"
+            src="/assets/logo-ss.svg"
             alt="Susane Silva assessoria"
-            width={243}
-            height={48}
+            width={1367}
+            height={1803}
             priority
-            className="h-auto w-[190px] md:w-[243px]"
+            className="h-12 w-auto"
           />
         </a>
 
