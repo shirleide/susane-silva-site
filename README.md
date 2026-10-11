@@ -34,3 +34,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Dependência de segurança do ESLint
+
+O `package.json` substitui `fast-glob` por `tinyglobby@0.2.17` apenas dentro de
+`@next/eslint-plugin-next`. Isso remove a dependência vulnerável `braces`
+([GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm))
+sem alterar a versão do Next.js nem desativar regras de lint.
+O plugin utiliza `globSync` com `onlyDirectories`, suportados pelo substituto.
+
+Ao atualizar o plugin do Next.js, revise esse override e remova-o quando a
+dependência original tiver correção. Valide com `npm audit`, `npm run lint`
+e `npm run build`.
