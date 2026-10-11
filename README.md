@@ -35,6 +35,12 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
+## Build na Hostinger
+
+Use `npm ci` para instalar as dependências, `npm run build` para compilar e
+`npm start` para iniciar o site. O script de build utiliza `next build --webpack`
+para contornar a falha do processo PostCSS do Turbopack observada na Hostinger.
+
 ## Dependência de segurança do ESLint
 
 O `package.json` substitui `fast-glob` por `tinyglobby@0.2.17` apenas dentro de
