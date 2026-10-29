@@ -6,7 +6,7 @@ export const siteConfig = {
   url: "https://susanesilva.com.br",
   whatsapp: "https://wa.me/5581999551785",
   email: "ssassessoria.agencia@gmail.com",
-  jornadaProtagonistaMpa: "https://chk.eduzz.com/7WXQRYQY9A",
+  jornadaProtagonistaMpa: "https://mpa.susanesilva.com.br",
   instagram: "https://www.instagram.com/susanesilva.a",
   linkedin: "https://www.linkedin.com/in/susanesilva/",
   tiktok: "https://www.tiktok.com/@susanesilva.a",
